@@ -1,18 +1,17 @@
 # notebooks/nb_01_lab_founding.py
 # Episode 1: The Founding. Session I lab notebook.
+
 import marimo
 
-app = marimo.App(width="medium", app_title="nb_01_lab_founding")
+__generated_with = "0.26.0"
+app = marimo.App(app_title="nb_01_lab_founding")
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     # Notebook 1.1: The Founding
-    """
-    )
-    return
+    """)
 
 
 @app.cell(hide_code=True)
@@ -25,7 +24,6 @@ def _(mo):
         ),
         kind="info",
     )
-    return
 
 
 @app.cell(hide_code=True)
@@ -41,13 +39,11 @@ def _(mo):
         ),
         kind="info",
     )
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     **Core exercises: 10 (+ 2 bonus).** Done early? You're free to go. Not done when the session ends? The rest is homework.
 
     Congratulations: as of today you are the (co-)founder of a campus
@@ -56,28 +52,24 @@ def _(mo):
     stickers (300 EUR is what's left). Your job today: give the company a name, price a menu, run the
     first revenue numbers, and find out whether Tobi's "everything costs 9.99"
     theory survives contact with arithmetic.
-    """
-    )
-    return
+    """)
 
 
 @app.cell(hide_code=True)
 def _():
     import marimo as mo
+
     return (mo,)
 
 
-@app.cell(hide_code=True)
-def _():
-    # Shows your current answer under the check.
-    def show_result(value):
-        if value is None:
-            return ""
-        if isinstance(value, str):
-            return f"\n\n**Your result:**\n\n```\n{value}\n```"
-        return f"\n\n**Your result:** `{value}`"
-
-    return (show_result,)
+@app.function(hide_code=True)
+# Shows your current answer under the check.
+def show_result(value):
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return f"\n\n**Your result:**\n\n```\n{value}\n```"
+    return f"\n\n**Your result:** `{value}`"
 
 
 @app.cell(hide_code=True)
@@ -101,25 +93,18 @@ def _(mo):
 def _(mo, startup_name_input):
     startup_name = startup_name_input.value.strip() or "Nameless Bites GmbH"
     mo.md(f"Welcome to **{startup_name}**! (Tobi already forgot it.)")
-    return (startup_name,)
 
 
-# ─────────────────────────────────────────────────────────────────────────
-# SECTION 1: Variables & types
-# ─────────────────────────────────────────────────────────────────────────
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Section 1: Variables & types
 
     A **variable** is a labeled box you put a value in. The value has a
     **type**: text is a `str` (`"Pad Thai"`), whole numbers are `int` (`3`),
     and decimals are `float` (`8.90`). Python figures out the type from the
     value you assign. Read and run the worked example (click into the cell, `Cmd/Ctrl+Enter`), then do the exercises.
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -129,13 +114,11 @@ def _():
     example_price = 3.50             # float
     example_portions = 2             # int
     print(example_item, "costs", example_price, "EUR ·", type(example_price))
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Exercise 1.1 (core): put the first menu item on the books
 
     Create three variables describing your signature dish:
@@ -143,9 +126,7 @@ def _(mo):
     - `menu_item_ex11`: its name, as text (any name you like)
     - `price_ex11`: its price, the float `8.90`
     - `portions_ex11`: how many a typical order contains, the int `3`
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -186,13 +167,11 @@ def _(mo):
             "Hint 2 (the structure)": "```python\nmenu_item_ex11 = \"___\"\nprice_ex11 = ___\nportions_ex11 = ___\n```\n\nText gets quotes, the two numbers don't.",
         }
     )
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Exercise 1.2 (core): the first revenue
 
     One order of your dish is `portions_ex11` portions at `price_ex11` each.
@@ -201,9 +180,7 @@ def _(mo):
     Watch out: `8.90 * 3` in Python is `26.700000000000003` (floats are
     slightly fuzzy). Wrap your result in `round(..., 2)` so it equals `26.70`
     exactly.
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -214,7 +191,7 @@ def _():
 
 
 @app.cell(hide_code=True)
-def _(mo, revenue_ex12, show_result):
+def _(mo, revenue_ex12):
     if revenue_ex12 is None:
         ex12_ok = False
         _msg = "Not attempted (Exercise 1.2). Assign it to `revenue_ex12` (a `print` alone doesn't count) and run the cell."
@@ -236,22 +213,18 @@ def _(mo):
             "Hint 2 (the structure)": "`revenue_ex12 = round(___ * ___, 2)`",
         }
     )
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Exercise 1.3 (core): what's left of the marketing budget
 
     Tobi has **300 EUR** left and two purchases lined up: a used delivery bike
     for **249.00** and the domain name for **12.90** a year. Compute what
     remains afterwards into `budget_left_ex13`, rounded to 2 places. Tobi wants
     to know whether a **40 EUR** sticker reorder still fits.
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -262,7 +235,7 @@ def _():
 
 
 @app.cell(hide_code=True)
-def _(budget_left_ex13, mo, show_result):
+def _(budget_left_ex13, mo):
     if budget_left_ex13 is None:
         ex13_ok = False
         _msg = "Not attempted (Exercise 1.3). Assign it to `budget_left_ex13` (a `print` alone doesn't count) and run the cell."
@@ -284,31 +257,23 @@ def _(mo):
             "Hint 2 (the structure)": "`budget_left_ex13 = round(300 - ___ - ___, 2)`",
         }
     )
-    return
 
 
-# ─────────────────────────────────────────────────────────────────────────
-# SECTION 2: Numbers & arithmetic
-# ─────────────────────────────────────────────────────────────────────────
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Section 2: Numbers & arithmetic
 
     Python does `+ - * /` as expected. Two more you'll use constantly:
     `//` is **floor division** (whole part) and `%` is the **remainder**
     (modulo). Tobi, meanwhile, has a Theory™: *every item should cost exactly
     9.99, "for psychological reasons".* Let's put a number on it.
-    """
-    )
-    return
+    """)
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Exercise 2.1 (trace, predict first): what does this print?
 
     This is a **trace** exercise: predict the output first, *then* reveal the
@@ -317,9 +282,7 @@ def _(mo):
     ```python
     print(7 // 2, 7 % 2)
     ```
-    """
-    )
-    return
+    """)
 
 
 @app.cell(hide_code=True)
@@ -348,20 +311,16 @@ def _(mo, trace_ex21):
             "point is the prediction.)"
         )
     mo.callout(mo.md(_msg), kind="info")
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Exercise 2.2 (core): Tobi's 9.99 theory, costed
 
     Tobi insists everything sells at **9.99**. Each dish costs you **7.40** to
     make. Compute the **margin** (selling price minus cost) into `margin_ex22`.
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -372,7 +331,7 @@ def _():
 
 
 @app.cell(hide_code=True)
-def _(margin_ex22, mo, show_result):
+def _(margin_ex22, mo):
     if margin_ex22 is None:
         ex22_ok = False
         _msg = "Not attempted (Exercise 2.2). Assign it to `margin_ex22` (a `print` alone doesn't count) and run the cell."
@@ -394,22 +353,18 @@ def _(mo):
             "Hint 2 (the structure)": "`margin_ex22 = ___ - ___`",
         }
     )
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Exercise 2.3 (core, fix the bug): Tobi multiplied a string
 
     Tobi tried to total three 9.99 items and wrote the line below. It *runs*,
     but the result is nonsense (`"9.999.999.99"`) because he multiplied
     **text** by 3 instead of a **number**. Fix the value so `total_ex23`
     becomes the number `29.97`.
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -421,7 +376,7 @@ def _():
 
 
 @app.cell(hide_code=True)
-def _(mo, show_result, total_ex23):
+def _(mo, total_ex23):
     if isinstance(total_ex23, str):
         ex23_ok = False
         _msg = "Wrong (Exercise 2.3): still text (a `str`). Drop the quotes so it's a number."
@@ -443,13 +398,11 @@ def _(mo):
             "Hint 2 (the structure)": "`total_ex23 = ___ * 3`\n\nThe blank is a number, not text in quotes.",
         }
     )
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Exercise 2.4 (core, fix the bug): Tobi packs the bags
 
     Rule: a delivery bag holds **4 portions**. Tonight's run is **27
@@ -457,9 +410,7 @@ def _(mo):
     the ones left over once every full bag is packed. It runs, but the rider
     says the number is nonsense: more loose portions than fit in a whole bag.
     Fix the line so `loose_ex24` is the leftover.
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -471,7 +422,7 @@ def _():
 
 
 @app.cell(hide_code=True)
-def _(loose_ex24, mo, show_result):
+def _(loose_ex24, mo):
     if loose_ex24 is None:
         ex24_ok = False
         _msg = "Not attempted (Exercise 2.4). Assign it to `loose_ex24` (a `print` alone doesn't count) and run the cell."
@@ -493,30 +444,22 @@ def _(mo):
             "Hint 2 (the structure)": "`loose_ex24 = 27 ___ 4`\n\nThe blank is a single operator from the section intro.",
         }
     )
-    return
 
 
-# ─────────────────────────────────────────────────────────────────────────
-# SECTION 3: Strings & f-strings
-# ─────────────────────────────────────────────────────────────────────────
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Section 3: Strings & f-strings
 
     An **f-string** builds text with values dropped into `{}` slots:
     `f"{name}: {price:.2f} EUR"`. The `:.2f` formats a number with exactly two
     decimals. Time to print the startup's first receipt line.
-    """
-    )
-    return
+    """)
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Exercise 3.1 (core): the first receipt line
 
     Using an f-string, build `receipt_ex31` so it reads **exactly**:
@@ -526,9 +469,7 @@ def _(mo):
     ```
 
     The number must be formatted with two decimals (`:.2f`).
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -539,11 +480,11 @@ def _():
     receipt_total = 26.70
     # YOUR CODE BELOW: one f-string, exactly "3x Pad Thai: 26.70 EUR"
     receipt_ex31 = None
-    return receipt_item, receipt_qty, receipt_total, receipt_ex31
+    return (receipt_ex31,)
 
 
 @app.cell(hide_code=True)
-def _(mo, receipt_ex31, show_result):
+def _(mo, receipt_ex31):
     if receipt_ex31 is None:
         ex31_ok = False
         _msg = "Not attempted (Exercise 3.1). Assign it to `receipt_ex31` (a `print` alone doesn't count) and run the cell."
@@ -568,13 +509,11 @@ def _(mo):
             "Hint 2 (the structure)": "`receipt_ex31 = f\"{___}x {___}: {___:.2f} EUR\"`",
         }
     )
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Exercise 3.2 (core): the launch notification
 
     MunchCorp lists its curry at **8.50**. Tobi's counter-move: a launch code
@@ -588,9 +527,7 @@ def _(mo):
     Compute the discounted price inside the second `{}` slot from the given
     variables (price times what's left after 15% off), formatted with
     `:.2f`. Don't type `8.49` by hand.
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -601,11 +538,11 @@ def _():
     push_off = 0.15
     # YOUR CODE BELOW: one f-string, exactly "Green Curry: 9.99 EUR, today 8.49 EUR"
     push_ex32 = None
-    return push_item, push_off, push_price, push_ex32
+    return (push_ex32,)
 
 
 @app.cell(hide_code=True)
-def _(mo, push_ex32, show_result):
+def _(mo, push_ex32):
     if push_ex32 is None:
         ex32_ok = False
         _msg = "Not attempted (Exercise 3.2). Assign it to `push_ex32` (a `print` alone doesn't count) and run the cell."
@@ -631,13 +568,11 @@ def _(mo):
             "Hint 2 (the structure)": "`push_ex32 = f\"{___}: {___:.2f} EUR, today {___ * (1 - ___):.2f} EUR\"`",
         }
     )
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Exercise 3.3 (bonus): a two-line receipt, right-aligned
 
     Real receipts line the prices up. Build `receipt_multi_ex33` as **two
@@ -650,9 +585,7 @@ def _(mo):
     ```
 
     (The prices are `26.70` and `4.60`. Bonus, not required.)
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -663,7 +596,7 @@ def _():
 
 
 @app.cell(hide_code=True)
-def _(mo, receipt_multi_ex33, show_result):
+def _(mo, receipt_multi_ex33):
     _expected = f"Pad Thai {26.70:>8.2f}\nCalamari {4.60:>8.2f}"
     if receipt_multi_ex33 is None:
         ex33_ok = False
@@ -675,7 +608,6 @@ def _(mo, receipt_multi_ex33, show_result):
         ex33_ok = False
         _msg = "Wrong: Bonus 3.3: not an exact match. Check the `\\n` and the `:>8.2f` widths."
     mo.callout(mo.md(_msg + show_result(receipt_multi_ex33)), kind="success" if ex33_ok else "warn")
-    return (ex33_ok,)
 
 
 @app.cell(hide_code=True)
@@ -686,16 +618,11 @@ def _(mo):
             "Hint 2 (the structure)": "`receipt_multi_ex33 = f\"Pad Thai {___:>8.2f}\\nCalamari {___:>8.2f}\"`",
         }
     )
-    return
 
 
-# ─────────────────────────────────────────────────────────────────────────
-# PUTTING IT TOGETHER: resolve the episode
-# ─────────────────────────────────────────────────────────────────────────
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Putting it together (core): the day-one summary
 
     Word arrives that **MunchCorp**, the soulless mega-competitor, just
@@ -719,9 +646,7 @@ def _(mo):
     still `None`, this cell goes **red**, and a red cell pauses every cell that depends on
     it, including the progress box. Nothing is lost; fix the red cell and it all
     comes back.
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -733,7 +658,7 @@ def _():
 
 
 @app.cell(hide_code=True)
-def _(day_one_summary_ex40, mo, show_result):
+def _(day_one_summary_ex40, mo):
     if day_one_summary_ex40 is None:
         ex40_ok = False
         _msg = "Not attempted (Putting it together). Assign it to `day_one_summary_ex40` (a `print` alone doesn't count) and run the cell."
@@ -758,13 +683,11 @@ def _(mo):
             "Hint 2 (the structure)": "`day_one_summary_ex40 = f\"{startup_name} day one: {___:.2f} EUR revenue, {___:.2f} EUR margin per dish.\"`\n\nThe blanks are your variables from 1.2 and 2.2.",
         }
     )
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Quiz (core, MCQ): which is a valid variable name?
 
     Answer by assigning the letter (as text) to `answer_ex50`:
@@ -773,9 +696,7 @@ def _(mo):
     - **b)** `class`
     - **c)** `my-price`
     - **d)** `menu_item`
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -805,17 +726,14 @@ def _(answer_ex50, mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Bonus: the price war
 
     Rumor has it MunchCorp will copy your dish and list it at **8.50**. If it
     ever comes to a price war, Tobi wants to know one number: **10% below
     that**. Compute it into `price_war_ex60`. (Bonus, not required. The war
     itself, if it comes, is another episode.)
-    """
-    )
-    return
+    """)
 
 
 @app.cell
@@ -826,7 +744,7 @@ def _():
 
 
 @app.cell(hide_code=True)
-def _(mo, price_war_ex60, show_result):
+def _(mo, price_war_ex60):
     if price_war_ex60 is None:
         ex60_ok = False
         _msg = "Not attempted: Bonus price war. Assign it to `price_war_ex60` (a `print` alone doesn't count) and run the cell."
@@ -837,14 +755,22 @@ def _(mo, price_war_ex60, show_result):
         ex60_ok = False
         _msg = "Wrong: Bonus price war: not 7.65. Take 90% of 8.50."
     mo.callout(mo.md(_msg + show_result(price_war_ex60)), kind="success" if ex60_ok else "warn")
-    return (ex60_ok,)
 
 
-# ─────────────────────────────────────────────────────────────────────────
-# PROGRESS + WRAP-UP
-# ─────────────────────────────────────────────────────────────────────────
 @app.cell(hide_code=True)
-def _(ex11_ok, ex12_ok, ex13_ok, ex22_ok, ex23_ok, ex24_ok, ex31_ok, ex32_ok, ex40_ok, ex50_ok, mo):
+def _(
+    ex11_ok,
+    ex12_ok,
+    ex13_ok,
+    ex22_ok,
+    ex23_ok,
+    ex24_ok,
+    ex31_ok,
+    ex32_ok,
+    ex40_ok,
+    ex50_ok,
+    mo,
+):
     # Progress cell: core exercises only (the trace and bonuses don't count).
     _checks = [ex11_ok, ex12_ok, ex13_ok, ex22_ok, ex23_ok, ex24_ok, ex31_ok, ex32_ok, ex40_ok, ex50_ok]
     _done = sum(_checks)
@@ -854,13 +780,11 @@ def _(ex11_ok, ex12_ok, ex13_ok, ex22_ok, ex23_ok, ex24_ok, ex31_ok, ex32_ok, ex
         mo.md(f"**Core exercises: {_done}/{_total} correct** · {_tobi}"),
         kind="success" if _done == _total else "neutral",
     )
-    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Before you leave
 
     1. Check the progress box above: all ten core exercises green?
@@ -870,9 +794,7 @@ def _(mo):
        guaranteed copy.
     3. Next episode: the city bans deliveries after 22:00, and Tobi wants to
        build a haggling bot. You'll need `if` and loops.
-    """
-    )
-    return
+    """)
 
 
 if __name__ == "__main__":
